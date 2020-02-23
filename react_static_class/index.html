@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+      <div id="root"></div>
+        <script type="text/babel">
+             
+            class ClassSample extends React.Component {        //formailag kötelező az extends React.Component
+    
+                 render() {                                    //formailag kötelező a render()
+                        return (                               //ide jön a tulajdonképpeni osztály kódja 
+                            <div>
+                              <div className="flex-container">
+                                  <img src="https://images.unsplash.com/photo-1558729924-714b0a8e0574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/>
+                                  <img src="https://images.unsplash.com/photo-1547716752-9a0331effbef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2021&q=80"/>
+                                  <img src="https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"/>
+                              </div>
+                              <p id="Octopi">„Well, that's a bunch of octopi...”</p>    
+                           </div>
+                        )
+    }
+}
+                 
+               
+
+            ReactDOM.render(<ClassSample />, document.getElementById('root'));
+        </script>
+        
+    </body>
+</html>
