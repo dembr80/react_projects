@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+      <div id="root"></div>
+        <script type="text/babel">
+             const puppyPicture = {
+                src: 'https://images.unsplash.com/photo-1546238232-20216dec9f72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3107&q=80',
+                author: 'https://unsplash.com/@bk010397',
+              }
+
+             const puppies = ( 
+  // Write your code inside the div tag. Don't modify stuff outside of it.
+                <div>
+                   <h1 className="heading">Some adorable puppies</h1>
+                   <img src={puppyPicture.src} alt="labradoodles"/>
+                   <p>
+                      <a href={puppyPicture.author}>Source</a>
+                   </p>
+    
+                </div>
+               )
+
+            ReactDOM.render(puppies, document.getElementById('root'));
+        </script>
+        
+    </body>
+</html>
