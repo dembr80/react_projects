@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+      <div id="root"></div>
+        <script type="text/babel">
+             
+              class Car extends React.Component {                           //osztály kötelező forma
+                render() {                                                  //render és return is kötelező
+                    return <h2>I am a {this.props.brand.model}!</h2>;       // paramétereket vár híváskor! 
+                       }
+                 }
+
+             
+             class Garage extends React.Component {                        //másik osztály kötelező formai elemekkel
+               render() {
+                 const carinfo = {name: "Ford", model: "Mustang"};          //az objektumot a return előtt definiáljuk (javaban is a void-on kívül van)
+               
+                   return (
+                     <div>
+                       <h1>Who lives in my garage?</h1>
+                       <Car brand={carinfo} />                             
+                     </div>
+                       );                                                      // a Garage osztály meghívja a Car osztályt, átadva a paramétereket
+                }
+             }
+
+            ReactDOM.render(<Garage />, document.getElementById('root'));         //lényeges, hogy végül mit íratunk ki - itt a Garage-t
+        </script>
+        
+    </body>
+</html>
