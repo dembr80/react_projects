@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+      <div id="root"></div>
+        <script type="text/babel">
+             
+              class MyForm extends React.Component {
+                  constructor(props) {
+                  super(props);
+                  this.state = { username: '' };
+                  }
+  
+                  
+                  myChangeHandler = (event) => {                           // =()=> emiatt nem BINDING-olunk a constructorban
+                    this.setState({username: event.target.value});         //event.target.value  kb. a getText()
+                 }
+  
+                  
+                  render() {
+                  return (
+                    <form>
+                      <h1>Hello {this.state.username}</h1>
+                      <p>Enter your name:</p>
+                      <input type='text' onChange={this.myChangeHandler} />
+                   </form>
+                   );
+                  }
+                }
+
+          ReactDOM.render(<MyForm />, document.getElementById('root'));
+              
+          
+                    
+        </script>
+        
+    </body>
+</html>
