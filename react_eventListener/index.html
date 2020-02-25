@@ -7,19 +7,30 @@
         <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
       <div id="root"></div>
         <script type="text/babel">
              
-              class EagerButton extends React.Component {        //osztály definiálás
+              class EagerButton extends React.Component {        //osztály definiálás kötelező formátumban
                  
-                  handleClick() {                                //metódus definiálás
-                       alert('I\'m clicked! Yay!');
+                  handleClick(color) {                                //metódus definiálás, color paramétert vár híváskor
+                       alert('You clicked the '+ color + ' button.');   
                  }
   
-                  render() {                                  
-                    return <button onClick={this.handleClick}>Click me! Click me!</button>        //onClick meghívja a metódust
+                  render() {     
+                      
+                      //React fragment div helyett. 
+                      //this bindolás: így köthetjük az eventhez, jeln esetben a click-hez. A Red-et nem bindoltam ezért megjeleníti már kattintás előtt, próbáld //ki! 
+                      
+                    return (
+                           <React.Fragment>                                                                                       
+                            <button class="red" onClick={this.handleClick("Red")}>Click me! Click me!</button>
+                            <button class="blue" onClick={this.handleClick.bind(this, "Blue")}>Click me! Click me!</button>
+                            <button class="green" onClick={this.handleClick.bind(this, "Green")}>Click me! Click me!</button>
+                          </React.Fragment>
+                            );                         
                   }
              }
 
