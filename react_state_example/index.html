@@ -26,6 +26,11 @@
                                   }
                  
                    }
+                  
+                  changePic=()=> {                                               //nyíl használata setState methodus elnevezésére, gombnyomáshoz
+                      this.setState({'image': "data:image/jpeg;base64,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" } );
+                  }
+                  
                  
                   render() {     
                        
@@ -38,9 +43,8 @@
                             <p><small>IMDB score: {this.state.imdb}</small></p>
                             <p>{this.state.story}</p>
                             <p><strong>Director: </strong>{this.state.director} </p>
-                                
-                            
-                          </div>
+                            <button onClick={this.changePic}>Change picture</button>   
+                           </div>
                             );                         
                   }
              }
