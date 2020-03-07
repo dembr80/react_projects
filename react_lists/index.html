@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+      <div id="root"></div>
+        <script type="text/babel">
+             
+              const dwarves = ['Sleepy', 'Grumpy', 'Gimli', 'Bruenor'];
+
+             class ListOfDwarves extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello! Here's a list of some dwarves:</h1>
+        <ul>
+          {dwarves.map(dwarf => (
+            <li>{dwarf}</li>))
+          }
+        </ul>
+      </div>
+    );
+  }
+}
+
+                  
+              ReactDOM.render(<ListOfDwarves />, document.getElementById('root'));
+                    
+        </script>
+        
+    </body>
+</html>
