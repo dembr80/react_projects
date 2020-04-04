@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: #333;
+}
+
+.greet {
+    font-size: 1.8rem;
+}
+
+
+/* Navbar container */
+
+.navbar {
+    /*overflow: hidden; */
+    background-color: #42444e;
+    font-family: 'Merryweather';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+/* Links inside the navbar */
+
+.navbar a {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+    /* Important for vertical align on mobile phones */
+}
+
+
+/* The dropdown container */
+
+.dropdown {
+    float: left;
+    /* overflow: hidden;*/
+}
+
+
+/* Dropdown button */
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+    /* Important for vertical align on mobile phones */
+}
+
+
+/* Add a red background color to navbar links on hover */
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: darkgray;
+}
+
+
+/* Dropdown content (hidden by default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+/* Add a grey background color to dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: darkgray;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.primary-content {
+    font-family: 'Merriweather', serif;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: #333;
+    background-color: aliceblue;
+    text-align: justify;
+    position: relative;
+    top: +8vh;
+    padding: 0.75rem;
+}
+
+.pmain {
+    font-size: 0.6rem;
+    letter-spacing: 0.125rem;
+    color: #8c8e9b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+ul,
+ol,
+dd,
+p,
+figure,
+pre,
+table,
+fieldset,
+hr,
+img,
+.main-header,
+.primary-content {
+    margin-bottom: 1rem;
+}
+
+
+/* Main Header Styles - alapból teljes képernyős
+ezért csak a paddinget igazítjuk*/
+
+.main-header {
+    text-align: justify;
+    padding: 1.25rem;
+    color: floralwhite;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    line-height: 1rem;
+    background-color: #42444e;
+    position: relative;
+    top: 10vh;
+}
+
+.headUpper {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.headerTitle {
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.logo {
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding-right: 1rem;
+}
+
+.logopic {
+    width: 100%;
+    /*max-height: 100%; */
+}
+
+.headContacts {
+    width: 100%;
+    text-align: left;
+}
+
+
+/* Media query-k, képernyő méret alapján megváltozik
+   az elrendezés
+   a headert oldalra fixáljuk*/
+
+@media (min-width: 768px) {
+    .main-header {
+        position: fixed;
+        top: 10vh;
+        height: 100%;
+        width: 33.3%;
+    }
+    h1,
+    .pmain,
+    .headerTitle {
+        text-align: justify;
+        padding: 0.1rem;
+        float: none;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    .logo {
+        width: 90%;
+        float: none;
+        margin-bottom: 1rem;
+    }
+    .logopic {
+        max-height: 100%;
+    }
+    .headContacts {
+        max-width: 100%;
+        display: inline-block;
+    }
+    .pmain {
+        margin-top: 1rem;
+        font-size: 0.6rem;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* Primary Content Wrapper Styles 
+    a tartalmat- letoljuk jobbra a headerről*/
+
+@media (min-width: 768px) {
+    .primary-content {
+        float: right;
+        width: 66.6%;
+        max-width: calc(100vw-10%);
+        top: 10vh;
+        z-index: -1;
+    }
+}
+
+
+/* Teljes képernyőnél */
+
+@media (min-width: 1025px) {
+    .main-header {
+        width: 20.625%;
+    }
+    .h1,
+    .pmain {
+        font-size: 0.8rem;
+    }
+    .headContacts {
+        max-width: 100%;
+    }
+}
+
+
+/* a tartalmat nem toljuk jobbra, h érintkezzen*/
+
+@media (min-width: 1025px) {
+    .primary-content {
+        float: none;
+        position: absolute;
+        left: 20.625%;
+    }
+}
+
+
+/* Article Styles - Tartalom reszponzív méretezés*/
+
+.post {
+    width: 100%;
+    margin: 0 auto 2rem;
+    padding: 0.5rem;
+}
+
+.picsize {
+    width: 100%;
+}
+
+
+/* ==== COMPONENT STYLES ==== */
+
+.button {
+    /*display: inline-block;
+	border: 1px solid #8c8e9b;
+	color: #8c8e9b;
+	border-radius: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin: 5px;
+	width: 100px;
+	font-family: 'Open Sans', sans-serif;*/
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.42857143;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.button:hover {
+    border: 1px solid #b60e63;
+}
+
+.load {
+    display: block;
+    text-align: center;
+    padding: 0.625rem;
+    font-size: 1.25rem;
+    color: #8c8e9b;
+}

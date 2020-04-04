@@ -1,0 +1,27 @@
+Backend: 
+ 
+Terminal
+- cd alkalmazás könyvtár
+- npm init -y
+- npm install mysql
+              express
+              cors
+- npm install --save-dev nodemon concurrently
+
+Package.json
+ scripts- be:
+  "server": "nodemon index.js"    //file változáskor újra renderel
+
+index.js- be megírod a kódot
+
+Indítás:
+Terminal
+- npm run server
+
+
+Frontend:
+ Új project:
+ Terminal: 
+- npx create-react-app frontend
+  Indítás:
+- npm start

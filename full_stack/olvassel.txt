@@ -1,0 +1,9 @@
+- npm init -y
+- npm install mysql
+- npm install --save express body-parser
+- npm install --save-dev nodemon concurrently
+
+package.json-ba, a scripts-be
+- "server": "nodemon index.js"
+ezután futtatható:
+- npm run server

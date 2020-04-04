@@ -1,0 +1,14 @@
+- node.js
+- react dev. tools
+- powershell
+- visual studio code
+
+Install (dependencies a package.json-ból - beépülők, modulok, firebase, router...)
+  Terminálban
+    - cd appkönyvtár
+    - npm install 
+Indítás: 
+    - npm start
+
+FONTOS: a könyvtárban már install utáni fájlok vannak - node-modules
+        ha újra akarod installálni, töröld a node-modules mappát
